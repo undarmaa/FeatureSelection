@@ -1,0 +1,556 @@
+#========== decision tree vs knn (Accuracy) ===================
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Accuracy'
+set xtics 0,10,50
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set output 'dt_knn1.eps'
+
+plot 'newTree/treeClassifier_shuffled_avg.txt' u 1:2  w lp ls 1 t'Decision Tree', 'newKNN/knnClassifier_shuffled_avg.txt' u 1:2  w lp ls 2 t'kNN'
+
+#======= decision tree vs knn (F-Score) ===============
+
+
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'F-Score'
+set xtics 0,10,50
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set output 'dt_knn2.eps'
+
+plot 'newTree/treeClassifier_shuffled_avg.txt' u 1:3  w lp ls 1 t'Decision Tree', 'newKNN/knnClassifier_shuffled_avg.txt' u 1:3  w lp ls 2 t'kNN'
+
+
+#*********** KNN Classifier *******************
+
+#========== Shuffled Accuracy/Fscore =============
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Accuracy'
+set xtics 0,10,50
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+
+set key top left
+set output 'accuracy.eps'
+plot 'knnClassifier_shuffled_0.txt' u 1:2 w lp ls 1 t'Fold I', 'knnClassifier_shuffled_1.txt' u 1:2 w lp ls 2 t'Fold II', 'knnClassifier_shuffled_2.txt' u 1:2 w lp ls 3 t'Fold III', 'knnClassifier_shuffled_3.txt' u 1:2 w lp ls 4 t'Fold IV', 'knnClassifier_shuffled_4.txt' u 1:2 w lp  ls 5 t'Fold V', 'knnClassifier_shuffled_avg.txt' u 1:2 w lp  ls 6 t'Average'
+
+#replot
+
+#================
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'F-Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+set output 'fScore.eps'
+plot 'knnClassifier_shuffled_0.txt' u 1:3 w lp ls 1 t'Fold I', 'knnClassifier_shuffled_1.txt' u 1:3 w lp ls 2 t'Fold II', 'knnClassifier_shuffled_2.txt' u 1:3 w lp ls 3 t'Fold III', 'knnClassifier_shuffled_3.txt' u 1:3 w lp ls 4 t'Fold IV', 'knnClassifier_shuffled_4.txt' u 1:3 w lp  ls 5 t'Fold V', 'knnClassifier_shuffled_avg.txt' u 1:3 w lp  ls 6 t'Average'
+
+#replot
+
+
+#======== Unshuffled Accuracy/F Score =============
+
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Accuracy'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key at 30,0.4
+
+set output 'accuracy_unshuffled.eps'
+plot 'knnClassifier_unShuffled_0.txt' u 1:2 w lp ls 1 t'Fold I', 'knnClassifier_unShuffled_1.txt' u 1:2 w lp ls 2 t'Fold II', 'knnClassifier_unShuffled_2.txt' u 1:2 w lp ls 3 t'Fold III', 'knnClassifier_unShuffled_3.txt' u 1:2 w lp ls 4 t'Fold IV', 'knnClassifier_unShuffled_4.txt' u 1:2 w lp  ls 5 t'Fold V', 'knnClassifier_shuffled_avg.txt' u 1:2 w lp  ls 6 t'Average'
+
+#replot
+
+#================
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'F-Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key at 30,0.4
+
+set output 'fScore_unshuffled.eps'
+plot 'knnClassifier_unShuffled_0.txt' u 1:3 w lp ls 1 t'Fold I', 'knnClassifier_unShuffled_1.txt' u 1:3 w lp ls 2 t'Fold II', 'knnClassifier_unShuffled_2.txt' u 1:3 w lp ls 3 t'Fold III', 'knnClassifier_unShuffled_3.txt' u 1:3 w lp ls 4 t'Fold IV', 'knnClassifier_unShuffled_4.txt' u 1:3 w lp  ls 5 t'Fold V', 'knnClassifier_unShuffled_avg.txt' u 1:3 w lp  ls 5 t'Average'
+
+#replot
+
+
+#=========== Accuracy vs FScore ===========
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+
+set output 'accuracy_fscore.eps'
+plot 'knnClassifier_shuffled_avg.txt' u 1:2 w lp  ls 1 t'Accuracy', 'knnClassifier_shuffled_avg.txt' u 1:3 w lp  ls 2 t'F-Score'
+
+#replot
+
+
+#*********** Decision Tree Classifier *******************
+
+#========== Shuffled Accuracy/Fscore =============
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Accuracy'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+
+set output 'accuracy.eps'
+plot 'treeClassifier_shuffled_0.txt' u 1:2 w lp ls 1 t'Fold I', 'treeClassifier_shuffled_1.txt' u 1:2 w lp ls 2 t'Fold II', 'treeClassifier_shuffled_2.txt' u 1:2 w lp ls 3 t'Fold III', 'treeClassifier_shuffled_3.txt' u 1:2 w lp ls 4 t'Fold IV', 'treeClassifier_shuffled_4.txt' u 1:2 w lp  ls 5 t'Fold V', 'treeClassifier_shuffled_avg.txt' u 1:2 w lp  ls 6 t'Average'
+
+#replot
+
+#================
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'F-Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+
+set output 'fScore.eps'
+plot 'treeClassifier_shuffled_0.txt' u 1:3 w lp ls 1 t'Fold I', 'treeClassifier_shuffled_1.txt' u 1:3 w lp ls 2 t'Fold II', 'treeClassifier_shuffled_2.txt' u 1:3 w lp ls 3 t'Fold III', 'treeClassifier_shuffled_3.txt' u 1:3 w lp ls 4 t'Fold IV', 'treeClassifier_shuffled_4.txt' u 1:3 w lp  ls 5 t'Fold V', 'treeClassifier_shuffled_avg.txt' u 1:3 w lp  ls 6 t'Average'
+
+#replot
+
+
+======== Unshuffled Accuracy/F Score =============
+
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Accuracy'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key at 30,0.4
+set output 'accuracy_unshuffled.eps'
+plot 'treeClassifier_unShuffled_0.txt' u 1:2 w lp ls 1 t'Fold I', 'treeClassifier_unShuffled_1.txt' u 1:2 w lp ls 2 t'Fold II', 'treeClassifier_unShuffled_2.txt' u 1:2 w lp ls 3 t'Fold III', 'treeClassifier_unShuffled_3.txt' u 1:2 w lp ls 4 t'Fold IV', 'treeClassifier_unShuffled_4.txt' u 1:2 w lp  ls 5 t'Fold V', 'treeClassifier_shuffled_avg.txt' u 1:2 w lp  ls 6 t'Average'
+
+#replot
+
+#================
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'F-Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key at 30,0.4
+
+set output 'fScore_unshuffled.eps'
+plot 'treeClassifier_unShuffled_0.txt' u 1:3 w lp ls 1 t'Fold I', 'treeClassifier_unShuffled_1.txt' u 1:3 w lp ls 2 t'Fold II', 'treeClassifier_unShuffled_2.txt' u 1:3 w lp ls 3 t'Fold III', 'treeClassifier_unShuffled_3.txt' u 1:3 w lp ls 4 t'Fold IV', 'treeClassifier_unShuffled_4.txt' u 1:3 w lp  ls 5 t'Fold V', 'treeClassifier_unShuffled_avg.txt' u 1:3 w lp  ls 6 t'Average'
+
+#replot
+
+#=========== Unshuffled Accuracy vs FScore ===========
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+set output 'accuracy_fscore_unShuffled.eps'
+plot 'treeClassifier_unShuffled_avg.txt' u 1:2 w lp  ls 1 t'Accuracy', 'treeClassifier_unShuffled_avg.txt' u 1:3 w lp  ls 2 t'F-Score'
+
+
+#=========== Accuracy vs FScore ===========
+reset
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "violet" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "brown" lt 8 lw 2 ps 2
+set style line 6 lc rgb "blue" lt 8 lw 2 ps 2
+set xlabel 'Number of features'
+set ylabel 'Score'
+set ytics font "Times-Roman,30" 
+set xtics font "Times-Roman,30"
+set xlabel font "Times-Roman,30"
+set ylabel font "Times-Roman,30" 
+set key font "Times-Roman, 30"
+set bmargin 5
+set xlabel offset 0,-1
+set ylabel offset -1,0
+set lmargin at screen 0.14
+set xtics 0,10,50
+set key top left
+set output 'accuracy_fscore.eps'
+plot 'treeClassifier_shuffled_avg.txt' u 1:2 w lp  ls 1 t'Accuracy', 'treeClassifier_shuffled_avg.txt' u 1:3 w lp  ls 2 t'F-Score'
+
+#replot
+
+
+#*****************************
+
+========== Words vs Frequency ===================
+set terminal postscript eps enhanced color 
+set xlabel 'Top 50 Most Frequent Words'
+set ylabel 'Frequency'
+set style data histogram
+set style histogram cluster gap 1
+set style fill solid border -1
+set boxwidth 0.9
+set xtic scale 0
+set key off
+set xtic rotate by 270
+# 2, 3, 4, 5 are the indexes of the columns; 'fc' stands for 'fillcolor'
+plot 'Output/wordFreqInAllArticles.txt' using 2:xtic(1) ti col fc rgb "blue" fillstyle pattern 1
+
+
+set output 'Plots/wordFreq_allArticles.eps'
+replot
+
+plot for [col=1:50] 'Output/wordFreqInAllArticles.txt' using col:xticlabels(1) ti col fc rgb "blue" fillstyle pattern 1
+
+#plot 'Output/wordFreqInAllArticles.txt' using 2:xtic(1) ti col fc rgb "blue" fillstyle pattern 1, '' u 3 ti col fc rgb "red" fillstyle pattern 3, '' u 4 ti col fc rgb "yellow" fillstyle pattern 4, '' u 5 ti col fc rgb "cyan" fillstyle pattern 5, '' u 6 ti col fc rgb "grey" fillstyle pattern 6, '' u 7 ti col fc rgb "orange" fillstyle pattern 7, '' u 8 ti col fc rgb "pink" fillstyle pattern 8, '' u 9 ti col fc rgb "cyan" fillstyle pattern 9, '' u 10 ti col fc rgb "blue" fillstyle pattern 10
+
+
+#================ Similarity in All metrics ===================
+
+set terminal postscript eps enhanced color 
+set ylabel'Similarity Score'
+set xlabel 'Sequence Number'
+
+plot 'Output/euclidSimilarity.txt' u 4:1 w p t'Euclidean',  'Output/cosineSimilarity.txt' u 4:1 w p t'Cosine', 'Output/jaccardSimilarity.txt' u 4:1 w p t'Jaccard'
+
+set output 'Plots/similarityUsecase.eps'
+replot
+
+#========== Jaccard Similar ===================
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "blue" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "blue" lt 8 lw 2 ps 2
+set style line 6 lc rgb "red" lt 8 lw 2 ps 2
+set xlabel 'Top 20 most Frequent Words'
+set ylabel 'Frequency' 
+set yrange[-20:160]
+plot 'Output2/jaccard_least_1.0.txt' u 2:xticlabels(1) w p ls 1 t'Jaccard Least Similar Article 1', 'Output2/jaccard_least_1.0.txt' u 3:xticlabels(1) w p  ls 1 t'Jaccard Least Similar Article 2', 'Output2/jaccard_most_0.0.txt' u 2:xticlabels(1) w p  ls 2 t'Jaccard Most Similar Article 1', 'Output2/jaccard_most_0.0.txt' u 3:xticlabels(1) w p ls 2 t'Jaccard Most Similar Article 2'
+set output 'Plots2/jaccardSimilarity.eps'
+replot
+
+
+set terminal postscript eps enhanced color 
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set view map
+set size ratio .9
+
+set object 1 rect from graph 0, graph 0 to graph 1, graph 1 back
+set object 1 rect fc rgb "black" fillstyle solid 1.0
+splot 'Output/unsortedEuclidSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+splot 'Output/unsortedEuclidSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedEuclideanSimilarity2D.eps'
+replot
+
+
+set terminal postscript eps enhanced color 
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set view map
+set size ratio .9
+
+set object 1 rect from graph 0, graph 0 to graph 1, graph 1 back
+set object 1 rect fc rgb "black" fillstyle solid 1.0
+splot 'Output/unsortedCosineSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedCosineSimilarity2D.eps'
+replot
+
+set terminal postscript eps enhanced color 
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set view map
+set size ratio .9
+
+set object 1 rect from graph 0, graph 0 to graph 1, graph 1 back
+set object 1 rect fc rgb "black" fillstyle solid 1.0
+splot 'Output/unsortedJaccardSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedJaccardSimilarity2D.eps'
+replot
+
+================ Unsorted Similarity =======================
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Euclidean Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/unsortedEuclidSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedEuclideanSimilarity.eps'
+replot
+
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Cosine Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/unsortedCosineSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedCosineSimilarity.eps'
+replot
+
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Jaccard Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/unsortedJaccardSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/unsortedJaccardSimilarity.eps'
+replot
+
+
+============= Sorted Similarity ====================
+
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Euclidean Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/euclidSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/sortedEuclideanSimilarity.eps'
+replot
+
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Cosine Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/cosineSimilarity.txt' u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/sortedCosineSimilarity.eps'
+replot
+
+set terminal postscript eps enhanced color 
+set ticslevel 0
+set zlabel 'Jaccard Similarity' rotate by 90
+set xlabel 'Article Id'
+set ylabel 'Article Id'
+set key off
+splot 'Output/jaccardSimilarity.txt' every :2 u 2:3:1 with points palette pointsize 2 pointtype 7
+set output 'Plots/sortedJaccardSimilarity.eps'
+replot
+
+#========== Euclidean Similar ===================
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "blue" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "blue" lt 8 lw 2 ps 2
+set style line 6 lc rgb "red" lt 8 lw 2 ps 2
+set xlabel 'Top 20 most Frequent Words'
+set ylabel 'Frequency' 
+#set yrange[-20:160]
+plot 'Output2/euclidean_least_0.00351.txt' u 2:xticlabels(1) w p ls 1 t'Euclidean Least Similar Article 1', 'Output2/euclidean_least_0.00351.txt' u 3:xticlabels(1) w p  ls 1 t'Euclidean Least Similar Article 2', 'Output2/euclidean_most_1.0.txt' u 2:xticlabels(1) w p  ls 2 t'Euclidean Most Similar Article 1', 'Output2/euclidean_most_1.0.txt' u 3:xticlabels(1) w p ls 2 t'Euclidean Most Similar Article 2'
+set output 'Plots2/euclideanSimilarity.eps'
+replot
+
+
+#========== Cosine Similar ===================
+set terminal postscript eps enhanced color 
+set style line 1 lc rgb "blue" lt 7 lw 2 ps 2
+set style line 2 lc rgb "black" lt 8 lw 2 ps 2
+set style line 3 lc rgb "green" lt 4 lw 2 ps 2
+set style line 4 lc rgb "red" lt 4 lw 2 ps 2
+set style line 5 lc rgb "blue" lt 8 lw 2 ps 2
+set style line 6 lc rgb "red" lt 8 lw 2 ps 2
+set xlabel 'Top 20 most Frequent Words'
+set ylabel 'Frequency' 
+#set yrange[-20:160]
+plot 'Output2/cosine_least_inf.txt' u 2:xticlabels(1) w p ls 1 t'Cosine Least Similar Article 1', 'Output2/cosine_least_inf.txt' u 3:xticlabels(1) w p  ls 1 t'Cosine Least Similar Article 2', 'Output2/cosine_most_0.0.txt' u 2:xticlabels(1) w p  ls 2 t'Cosine Most Similar Article 1', 'Output2/cosine_most_0.0.txt' u 3:xticlabels(1) w p ls 2 t'Cosine Most Similar Article 2'
+set output 'Plots2/cosineSimilarity.eps'
+replot
+
+plot 'transmitPower_freq.txt' every ::0::25 u 1:4 w p ls 1 t'TV Band', 'transmitPower_freq.txt' every ::25::50 u 1:4 w p ls 2 t'LTE Band', 'transmitPower_freq.txt' every ::50::75 u 1:4 w p ls 3 t'ISM Band', 'transmitPower_freq.txt' every ::75::100 u 1:4 w p ls 4 t'CBRS Band'
+
+set output 'transmitPower_Freq.eps'
+replot

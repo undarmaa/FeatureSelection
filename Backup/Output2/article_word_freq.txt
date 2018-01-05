@@ -1,0 +1,26 @@
+SN    'People'  'lost'  'died'  'best'  'actor'  'family'  'home'  'cancer'  'first'  'York'  'King'  'star'  'series'  'announced'  'death'  'California'  'role'  'been'  'also'  'band' 
+All    1603  1592  1592  215  167  143  142  121  120  99  98  94  91  83  82  82  82  82  79  77 
+0   0  0  0  0  0  0  0  0  2  0  0  0  0  0  0  0  0  0  0  0   Articles3/article-abe-trump-japan-washington-visit.txt
+1   0  0  0  0  0  0  0  0  0  1  0  0  0  1  0  0  0  2  2  0   Articles3/article-airline-profits-2015.txt
+2   160  159  159  22  17  14  14  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-alex-rocco-godfather-actor-dies-thr-feat.txt
+3   160  159  159  21  16  14  14  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-allen-toussaint-obit-feat.txt
+4   160  159  159  21  16  14  14  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-ann-rule-true-crime-author-dies-feat.txt
+5   160  159  160  21  19  15  15  12  11  10  43  10  9  9  10  8  8  7  7  8   Articles3/article-bb-king-dead.txt
+6   160  159  159  21  19  14  14  12  11  9  7  10  9  8  8  8  8  7  7  7   Articles3/article-ben-e-king-singer-obit-feat.txt
+7   0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  2  0  0   Articles3/article-best-and-worst-airlines-customer-satisfaction.txt
+8   160  159  159  21  16  14  14  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-betsy-palmer-dies.txt
+9   0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0   Articles3/article-china-sizes-up-donald-trump.txt
+10   1  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1  0  0   Articles3/article-china-trump-trade-exports.txt
+11   0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  1  3  0   Articles3/article-china-xi-jinping-world-economic-forum-davos.txt
+12   160  159  158  21  16  14  14  12  11  9  6  10  9  8  8  8  8  7  7  7   Articles3/article-dave-henderson-dies.txt
+13   160  159  159  21  16  14  14  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-david-canary-dies-all-my-children-feat.txt
+14   161  160  159  21  16  14  14  12  12  9  6  10  9  8  8  8  8  7  7  7   Articles3/article-dickie-moore-child-star-dies.txt
+15   0  0  0  1  0  0  0  0  0  1  0  0  1  0  0  0  0  1  0  0   Articles3/article-donald-trump-alec-baldwin-snl-tweet.txt
+16   160  160  158  21  16  16  15  12  11  9  6  9  9  8  8  8  8  7  7  7   Articles3/article-frank-gifford-dies.txt
+17   0  0  1  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0   Articles3/article-obit-vice-president-son-beau-biden.txt
+18   0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  1  1  0  0   Articles3/article-phoenix-arizona-business-trip-tips.txt
+19   0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0   Articles3/article-putin-xi-trump-china-russia.txt
+20   0  0  2  2  0  0  0  0  2  1  0  0  0  1  0  2  0  1  0  6   Articles3/article-scott-weiland-cause-of-death-feat.txt
+21   1  0  0  0  0  0  0  0  1  1  0  0  0  0  0  0  0  2  3  0   Articles3/article-stocks-markets-dow-china.txt
+22   0  0  0  1  0  0  0  0  1  1  0  0  0  0  0  0  1  1  1  0   Articles3/article-trump-trade-representative-nominee-robert-lighthizer.txt
+23   0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0   Articles3/article-trump-xi-phone-call.txt
